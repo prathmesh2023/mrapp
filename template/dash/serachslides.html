@@ -1,0 +1,86 @@
+{% extends "base.html" %} {% block title %} {% endblock title %} {% block main %} {% load static %}
+
+
+<div id="conteudo">
+
+    <div class="conteudo-inner">
+        <div class="conteudo-wrapper">
+
+
+            <!-- <div class="cmr text-center">
+                <span class="fa fa-plus"><a href="/create_mr">Create New MR</a></span>
+
+            </div> -->
+       
+            <h4 class="my-3"> All Slides </h4>
+
+
+
+
+            <div class="conteudo-box">
+                <div class="conteudo-boxInner">
+
+                    <div class="header container">
+                        <div class="button mx-5">
+                       
+
+                        <form class="row g-3" method="POST" action="/search_slides">
+                            {% csrf_token %}
+                            <div class="col-auto">
+                                <a href="/add_slide">
+                                <button class="btn  btn-success rounded-0" type="button">Create New Slide</button>
+                            </a>
+                            </div>
+                            <div class="col-auto" style="margin-left: 314px;">
+                             
+                              <input type="text" class="form-control" id="inputPassword2" placeholder="name,category" name="string">
+                            </div>
+                            <div class="col-auto">
+                              <button type="submit" class="btn btn-primary mb-3 rounded-0">Search</button>
+                            </div>
+                          </form>
+                        
+                        </div>
+                    </div>
+
+
+                    
+
+                 <div class="container-fluid text-center">
+
+                        <div class="row">
+                            {% for h in slide %} {% if forloop.counter0|divisibleby:4 %}
+                        </div><br>
+                        <div class="row">
+                            {% endif %}
+
+
+                        
+                        <div class="col-md-3">
+                            <div class="card rounded-0">
+                                <img src="{{h.slide_pic.url}}" class="card-img-top" style="height: 200px;">
+                                <p class="card-title"><b>Name:</b> {{h.name}}</p>
+                                <p class="card-subtitle"><b>category:</b> {{h.category}}</p>
+                                
+                            </div>
+                            <div class="card-footer rounded-0">
+                                <a href="/delete_slide/{{h.id}}">
+                                <button class="w-100 btn btn-danger rounded-0"><span class="fa fa-trash fa-lg"></span></button>
+                            </a>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+                    </div>
+                 </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}

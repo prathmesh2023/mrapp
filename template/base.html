@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> {% load static %}
+
+    <!-- Bootstrap CSS -->
+
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href=" {% static 'css/main.css' %} " rel="stylesheet " type="text/css ">
+    <link href=" {% static 'css/dashboard.css' %} " rel="stylesheet " type="text/css ">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="{% static 'js/dashboard.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> {% block title %}
+    
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyDsdupD-fv-tx8bx8Quu9aDYQ63bnVeNCU&sensor=false&libraries=places"></script>
+    
+    <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC4_UNfzhZ5fgL693P7yVcPlfMzFs6MdCw"></script> -->
+    <script type="text/javascript" src="https://rawgit.com/Logicify/jquery-locationpicker-plugin/master/dist/locationpicker.jquery.js"></script>
+    
+    <title> </title>
+
+    {% endblock title %} {% load static %}
+
+
+</head>
+
+<body>
+
+    <div id="hit-menu" class="col-xs-hide col-sm-hide"></div>
+    <div class="menu-mobile-background "></div>
+    <div id="header">
+        <div class="header-inner">
+            <div class="header-topo">
+                <button class="button-menu-mobile ">
+                    <div class="box-stripes">
+                        <span class="stripe-top"></span>
+                        <span class="stripe-middle"></span>
+                        <span class="stripe-bottom"></span>
+                    </div>
+                </button>
+                <span class="header-nomeEmpresa header-nomeEmpresa_mobile col-xs-show col-sm-show">Dashboard</span>
+                <a href="#" class="brand-icon "><img class="shaddow" src="{% static 'res/logo.png'%}" style="height: 50px;
+                    width: 100px;
+                    margin-top: -14px;
+                    background-color: white;"> <span></span></a>
+            </div>
+            <!-- <div class="header-menu">
+                <div class="menu-modulos">
+
+
+                    {% block hmenu %} {% endblock hmenu %}
+
+
+
+                </div>
+
+                <div class="clear"></div>
+            </div> -->
+        </div>
+    </div>
+    <div id="menu" class="">
+        <div class="menu-header">
+            <span class="shape-remove-shadow_green"></span>
+            <span class="shape-remove-shadow_white"></span>
+            <div class="header-topo">
+                <div class="header-controlMenu  col-sm-hide col-xs-hide">
+                    <span class="header-nomeEmpresa">Desicovery Medlife</span>
+                    <button class="header-controlMenuButton">
+                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 408 408" style="enable-background:new 0 0 408 408;" xml:space="preserve" class="detail convertSvgInline replaced-svg" data-id="61022" data-kw="go10">
+<g>
+	<g id="arrow-back">
+		<path d="M408,178.5H96.9L239.7,35.7L204,0L0,204l204,204l35.7-35.7L96.9,229.5H408V178.5z"></path>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                    </button>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="header-menu">
+                <div class="header-search ">
+                    
+<g>
+	<g>
+		<path d="M363.909,181.955C363.909,81.473,282.44,0,181.956,0C81.474,0,0.001,81.473,0.001,181.955s81.473,181.951,181.955,181.951    C282.44,363.906,363.909,282.437,363.909,181.955z M181.956,318.416c-75.252,0-136.465-61.208-136.465-136.46    c0-75.252,61.213-136.465,136.465-136.465c75.25,0,136.468,61.213,136.468,136.465    C318.424,257.208,257.206,318.416,181.956,318.416z"></path>
+		<path d="M471.882,407.567L360.567,296.243c-16.586,25.795-38.536,47.734-64.331,64.321l111.324,111.324    c17.772,17.768,46.587,17.768,64.321,0C489.654,454.149,489.654,425.334,471.882,407.567z"></path>
+	</g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                    <h2 style="margin-top: 5px;    margin-left: 14px;">Dashboard</h2></p>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="menu-box">
+            <div class="menu-wrapper-inner">
+                <div class="menu-wrapper">
+                    <div class="menu-slider">
+                        <div class="menu">
+                            <ul>
+
+                                <li>
+                                    <div class="menu-item"><a href="/" class="">Home</a></div>
+                                </li>
+
+                                <li>
+                                    <div class="menu-item"><a href="/mrlist" class="">MR List</a></div>
+                                </li>
+
+                                <li>
+                                    <div class="menu-item"><a href="/dr_list" class="">Doctor List</a></div>
+                                </li>
+
+                                <li>
+                                    <div class="menu-item"><a href="/add_slide" class="">Add Slide</a></div>
+                                </li>
+
+
+                                <li>
+                                    <div class="menu-item"><a href="/all_slides" class="">All Slides</a></div>
+                                </li>
+
+                                <li>
+                                    <div class="menu-item"><a href="/report" class="">Report</a></div>
+                                </li>
+
+                                <li>
+                                    <div class="menu-item"><a href="/logout" class="">Logout</a></div>
+                                </li>
+
+<!-- 
+                                <li>
+                                    <div class="menu-item"><a href="#" class="menu-anchor" data-menu="1">Item menu 1</a>
+                                        <svg class="spt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 451.846 451.847" style="enable-background:new 0 0 451.846 451.847;" xml:space="preserve">
+<g>
+	<path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744   L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284   c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#" class="menu-anchor" data-menu="2">Item menu 2</a>
+                                        <svg class="spt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 451.846 451.847" style="enable-background:new 0 0 451.846 451.847;" xml:space="preserve">
+<g>
+	<path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744   L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284   c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#" class="">Item menu 3</a></div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#" class="menu-anchor" data-menu="3">Item menu 4</a>
+                                        <svg class="spt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 451.846 451.847" style="enable-background:new 0 0 451.846 451.847;" xml:space="preserve">
+<g>
+	<path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744   L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284   c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg></div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#" class="">Item menu 5</a></div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#" class="menu-anchor" data-menu="4">Item menu 6</a>
+                                        <svg class="spt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 451.846 451.847" style="enable-background:new 0 0 451.846 451.847;" xml:space="preserve">
+<g>
+	<path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744   L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284   c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg> -->
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="submenu menu" data-menu="1">
+                            <div class="submenu-back">
+                                <div class="menu-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve" class="spt">
+<g>
+	<path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0   c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744   c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                                    <a href="#" class="menu-back">BACK</a></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="menu-item"><a href="#" class="menu-anchor" data-menu="5">Subitem</a>
+                                        <svg class="spt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 451.846 451.847" style="enable-background:new 0 0 451.846 451.847;" xml:space="preserve">
+<g>
+	<path d="M345.441,248.292L151.154,442.573c-12.359,12.365-32.397,12.365-44.75,0c-12.354-12.354-12.354-32.391,0-44.744   L278.318,225.92L106.409,54.017c-12.354-12.359-12.354-32.394,0-44.748c12.354-12.359,32.391-12.359,44.75,0l194.287,194.284   c6.177,6.18,9.262,14.271,9.262,22.366C354.708,234.018,351.617,242.115,345.441,248.292z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="submenu menu" data-menu="2">
+                            <div class="submenu-back">
+                                <div class="menu-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve" class="spt">
+<g>
+	<path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0   c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744   c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                                    <a href="#" class="menu-back">BACK</a></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="submenu menu" data-menu="3">
+                            <div class="submenu-back">
+                                <div class="menu-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve" class="spt">
+<g>
+	<path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0   c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744   c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                                    <a href="#" class="menu-back">BACK</a></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="submenu menu" data-menu="4">
+                            <div class="submenu-back">
+                                <div class="menu-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve" class="spt">
+<g>
+	<path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0   c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744   c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                                    <a href="#" class="menu-back">BACK</a></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="submenu menu" data-menu="5">
+                            <div class="submenu-back">
+                                <div class="menu-item">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve" class="spt">
+<g>
+	<path d="M97.141,225.92c0-8.095,3.091-16.192,9.259-22.366L300.689,9.27c12.359-12.359,32.397-12.359,44.751,0   c12.354,12.354,12.354,32.388,0,44.748L173.525,225.92l171.903,171.909c12.354,12.354,12.354,32.391,0,44.744   c-12.354,12.365-32.386,12.365-44.745,0l-194.29-194.281C100.226,242.115,97.141,234.018,97.141,225.92z"></path>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+<g>
+</g>
+</svg>
+                                    <a href="#" class="menu-back">BACK</a></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                                <li>
+                                    <div class="menu-item"><a href="#">Subitem</a></div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block main %} {% endblock main %}
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p " crossorigin="anonymous "></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js " integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js " integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13 " crossorigin="anonymous "></script>
+    -->
+
+
+
+    <script>
+        //Resize browser width to see what happens
+        //----------------------------------------------------------
+        var MAX_WIDTH = 1000;
+        var MENU_CLASS = "menu-hide";
+        var menu_width;
+        var statusHitMenu = false;
+        var not_loaded = false;
+        var statusMenu = "open"; //checa se o menu está aberto ou não
+        var CLASS_MENU_RETRAIDO = "menu-retraido";
+        //----------------------------------------------------------
+        jQuery(document).ready(
+            function() {
+                initMenu();
+                $(window).resize(resizeWindow);
+                resizeWindow();
+
+                //----------------------------
+                $(".button-actions").click(function() {
+                    if ($(this).hasClass('active')) {
+                        $(".boxWrapperActions-wrapper").removeClass('active');
+                        $(".boxWrapperActions-wrapper").stop(true, true).slideUp(300);
+                        $(".button-actions").removeClass('active');
+                    } else {
+                        $(".boxWrapperActions-wrapper").addClass('active');
+                        $(".boxWrapperActions-wrapper").stop(true, true).slideDown(300);
+                        $(".button-actions").addClass('active');
+                    }
+
+                    return false;
+                });
+
+                $("#bt_item_user").click(function() {
+                    if ($(this).hasClass('active')) {
+                        $("#bt_item_user").removeClass('active');
+                        $(".boxOptions-item_user .boxOptionsWrapper-container").stop(true, true).fadeOut(300);
+                    } else {
+                        $("#bt_item_user").addClass('active');
+                        $(".boxOptions-item_user .boxOptionsWrapper-container").stop(true, true).fadeIn(300);
+                    }
+
+                    return false;
+                });
+            });
+
+
+
+        function retrairMenu() {
+            var _timer = 300;
+
+            $('body').addClass(CLASS_MENU_RETRAIDO);
+            var _anim_01 = {
+                left: -280,
+                opacity: 0
+            };
+
+            $("#menu").stop(true, true).animate(_anim_01, _timer);
+            $("#hit-menu").stop(true, true).show();
+            $('#header .button-menu-mobile').stop(true, true).show();
+            $('#header .button-menu-mobile').stop(true, true).animate({
+                opacity: 1
+            }, _timer);
+            $("#header .menu-modulos .menu-modulosInner").stop(true, true).animate({
+                paddingLeft: 0
+            }, _timer);
+            $("#conteudo .conteudo-inner").stop(true, true).animate({
+                paddingLeft: 0
+            }, _timer);
+
+            hideBackgroundMenuMobile();
+        }
+
+        function expandirMenu() {
+            $('body').removeClass(CLASS_MENU_RETRAIDO);
+            var _anim_01 = {
+                left: 0,
+                opacity: 1
+            };
+
+            $("#menu").stop(true, true).animate(_anim_01);
+            $("#hit-menu").stop(true, true).hide();
+            $("#conteudo .conteudo-inner").stop(true, true).animate({
+                paddingLeft: 260
+            });
+
+            $('#header .button-menu-mobile').stop(true, true).animate({
+                opacity: 0
+            }, function() {
+                $('#header .button-menu-mobile').stop(true, true).hide();
+            });
+            $("#header .menu-modulos .menu-modulosInner").stop(true, true).animate({
+                paddingLeft: 280
+            });
+
+            if (($(window).width() <= 768)) {
+                showBackgroundMenuMobile();
+            }
+
+        }
+
+        function resizeWindow() {
+            var _w = $(window).width();
+
+
+            if (_w > MAX_WIDTH) //expandir menu
+            {
+                if ($('body').hasClass(CLASS_MENU_RETRAIDO)) {
+                    if (statusMenu != "closed") {
+                        expandirMenu();
+                    }
+                }
+                if (statusMenu == "open_by_menu_mobile") {
+                    statusMenu = "open";
+                }
+            } else //retrair menu
+            {
+                if (!$('body').hasClass(CLASS_MENU_RETRAIDO)) {
+                    if (statusMenu != "open_by_menu_mobile") {
+                        retrairMenu();
+                    }
+                }
+            }
+
+            if (_w >= 768) {
+                if ($('.menu-mobile-background').hasClass("on")) {
+                    hideBackgroundMenuMobile();
+                }
+            } else {
+                if (statusMenu == "open_by_menu_mobile") {
+                    showBackgroundMenuMobile();
+                }
+            }
+        }
+
+        function initMenu() {
+            menu_width = $("#menu .menu").width();
+
+            $(".menu-back").click(function() {
+
+                var _pos = $(".menu-slider").position().left + menu_width;
+                var _obj = $(this).closest(".submenu");
+
+                $(".menu-slider").stop().animate({
+                    left: _pos
+                }, 300, function() {
+                    _obj.hide();
+                });
+
+                return false;
+            });
+
+            $(".menu-anchor").click(function() {
+                var _d = $(this).data('menu');
+                $(".submenu").each(function() {
+
+                    var _d_check = $(this).data('menu');
+
+                    if (_d_check == _d) {
+                        $(this).show();
+                        var _pos = $(".menu-slider").position().left - menu_width;
+
+                        $(".menu-slider").stop(true, true).animate({
+                            left: _pos
+                        }, 300);
+                        return false;
+                    }
+                });
+
+                return false;
+            });
+
+            $(".header-controlMenuButton").click(function() {
+                statusMenu = "closed";
+                retrairMenu();
+                return false;
+            });
+
+            $(".button-menu-mobile").click(function() {
+                statusMenu = "open_by_menu_mobile";
+                expandirMenu();
+                return false;
+            });
+
+            $(".menu-mobile-background").mousedown(function() {
+                retrairMenu();
+            });
+
+            $('#hit-menu').mouseenter(function() {
+                statusHitMenu = true;
+                expandirMenu();
+            });
+
+            $('#menu').mouseleave(function() {
+                if (statusHitMenu) {
+                    statusHitMenu = false;
+                    retrairMenu();
+                }
+            });
+
+        }
+
+        function hideBackgroundMenuMobile() {
+            $('.menu-mobile-background').removeClass("on");
+            $('.menu-mobile-background').stop(true, true).animate({
+                opacity: 0
+            }, function() {
+                $('.menu-mobile-background').stop(true, true).hide();
+                $('.menu-mobile-background').removeAttr('style');
+            });
+        }
+
+        function showBackgroundMenuMobile() {
+            $('.menu-mobile-background').addClass("on");
+            $('.menu-mobile-background').stop(true, true).show();
+            $('.menu-mobile-background').stop(true, true).animate({
+                opacity: 1
+            });
+        }
+    </script>
+
+
+</body>
+
+</html>

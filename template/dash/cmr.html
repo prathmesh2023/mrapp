@@ -1,0 +1,83 @@
+{% extends "base.html" %} {% block title %} {% endblock title %} {% block main %} {% load static %}
+
+
+<div id="conteudo">
+
+    <div class="conteudo-inner">
+        <div class="conteudo-wrapper">
+
+
+            <!-- <div class="cmr text-center">
+                <span class="fa fa-plus"><a href="/create_mr">Create New MR</a></span>
+            </div> -->
+       
+            <h4 class="my-3"> MR List</h4>
+
+
+
+
+            <div class="conteudo-box">
+                <div class="conteudo-boxInner">
+
+                    <div class="header container">
+                        <div class="button mx-5">
+                       
+
+                        <form class="row g-3" method="POST" action="/search_mr">
+                            {% csrf_token %}
+                            <div class="col-auto">
+                                <a href="/create_mr">
+                                <button class="btn  btn-success rounded-0" type="button">Create New Mr</button>
+                            </a>
+                            </div>
+                            <div class="col-auto" style="    margin-left: 314px;">
+                             
+                              <input type="text" class="form-control" id="inputPassword2" placeholder="id,user_name,mobile" name="string">
+                            </div>
+                            <div class="col-auto">
+                              <button type="submit" class="btn btn-primary mb-3 rounded-0">Search</button>
+                            </div>
+                          </form>
+                        
+                        </div>
+                    </div>
+
+
+                    <table class="table table-hover my-4">
+                        <thead>
+                            <tr>
+                                <th scope="col">MR ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Mobile</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in mr %}
+                              
+                
+                            <tr>
+                                <th scope="row">{{i.id}}</th>
+                                <td>{{i.user_name}}</td>
+                                <td>{{i.mobile}}</td>
+                                <td>{{i.status}}</td>
+                                <td><a href="/update_mr/{{i.id}}"><span class="fa fa-pencil fa-lg" style="font-size: 28px;
+                                    color: green;"></span> </a>
+                                </td>
+                            </tr>
+
+                            {% endfor %}
+                  
+                        </tbody>
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock main %}

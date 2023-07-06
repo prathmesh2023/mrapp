@@ -1,0 +1,137 @@
+{% extends "base.html" %} {% block title %} {% endblock title %} {% block main %} {% load static %}
+
+<div id="conteudo">
+
+  <div class="conteudo-inner">
+      <div class="conteudo-wrapper">
+
+
+
+          <div class="conteudo-box">
+              <div class="conteudo-boxInner">
+    
+                <h5>Add New Slide</h5>
+
+
+                <div class="form my-3">
+                    <form action="/add_slide" enctype="multipart/form-data" method="POST">
+                      {% csrf_token %}
+                      
+                      <div class="row">
+              
+                        <div class="col">
+                          <input required type="text" class="form-control" placeholder="Slide Name" name="name">
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col">
+                          <input required type="text" class="form-control" placeholder="Category" name="category">
+                        </div>
+                        <div class="col">
+                          <input required type="text" class="form-control" placeholder="Sub Category" name="sub_category">
+                        </div>
+                      </div>
+
+         
+                      <image-input-field>
+                        <img preview class="my-2">
+                        <input required type="file" name="slide_pic">
+                        <button type="button" class="btn btn-outline-dark rounded-0 my-2 btn-sm" select>Add Slide</button>
+                        <button type="button" class="btn btn-outline-danger rounded-0 my-2 mx-2 btn-sm" remove>Remove Image</button>
+                      </image-input-field>
+                 
+
+                      <br>
+
+                      
+ 
+  
+  
+                      <a href="/all_slides">
+                      <button type="button" class="btn btn-danger my-2">Cancel</button>
+                      </a>
+  
+                      <button type="submit" class="btn btn-success my-2">Save</button>
+  
+                    </form>
+
+
+                </div>
+            </div>
+
+                
+        </div>
+</div>
+
+
+<style>
+ image-input-field img {
+  display: block;
+  max-width: 200px;
+
+}
+</style>
+
+<script>
+    class ImageInputField extends HTMLElement {
+  connectedCallback() {
+    this.configureListeners()
+    this.removeButton.style.display = "none"
+    this.input.style.display = "none"
+    this.input.accept="image/*"
+  }
+
+  get input() {
+    return this.querySelector("input[type=file]")
+  }
+
+  get selectButton() {
+    return this.querySelector("button[select]")
+  }
+
+  get removeButton() {
+    return this.querySelector("button[remove]")
+  }
+
+  get preview() {
+    return this.querySelector("img[preview]")
+  }
+
+  removeImage() {
+    this.preview.removeAttribute("src")
+    this.input.value = ""
+    this.removeButton.style.display = "none"
+  }
+
+  showPreview(image) {
+    let reader = new FileReader();
+    reader.onload = (event) => {
+      this.preview.setAttribute("src", event.target.result)
+    }
+
+    reader.readAsDataURL(image);
+    this.removeButton.style.removeProperty("display")
+  }
+
+  configureListeners() {
+    this.input.addEventListener('change', event => {
+      let file = event.target.files[0]
+      this.showPreview(file)
+    })
+
+    this.selectButton.addEventListener('click', () => {
+      this.input.click()
+    })
+
+    this.removeButton.addEventListener('click', () => {
+      this.removeImage()
+    })
+  }
+}
+
+customElements.define('image-input-field', ImageInputField)
+</script>
+
+
+{% endblock %}

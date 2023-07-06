@@ -1,0 +1,16 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #008658;
+}
+
+.form-control{
+    border-radius: 0px;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+
